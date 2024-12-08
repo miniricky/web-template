@@ -1,12 +1,12 @@
 .row{
-  margin-left: - map-get($container-paddings, 'sm');
-  margin-right: - map-get($container-paddings, 'sm');
+  margin-left: - map-get($container-paddings-x, 'sm');
+  margin-right: - map-get($container-paddings-x, 'sm');
 }
 
 @include media-breakpoint-up(md) {
   .row{
-    margin-left: - map-get($container-paddings, 'md');
-    margin-right: - map-get($container-paddings, 'md');
+    margin-left: - map-get($container-paddings-x, 'md');
+    margin-right: - map-get($container-paddings-x, 'md');
 
     &.row-30{
       margin-left: -15px !important;
@@ -22,7 +22,7 @@
 
 @include media-breakpoint-up(lg) {
   .row{
-    margin-left: - map-get($container-paddings, 'lg');
-    margin-right: - map-get($container-paddings, 'lg');
+    margin-left: - map-get($container-paddings-x, 'lg');
+    margin-right: - map-get($container-paddings-x, 'lg');
   }
 }

@@ -27,7 +27,7 @@ gulp.task('sass', function () {
     .pipe(sass({
       mplementation: require('sass'),
       quietDeps: true,
-      silenceDeprecations: ['legacy-js-api']
+      silenceDeprecations: ['mixed-decls', 'color-functions', 'global-builtin', 'import']
     }).on('error', sass.logError))
     .pipe(cleancss())
     .pipe(rename('style.min.css'))
