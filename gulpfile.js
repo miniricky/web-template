@@ -24,6 +24,7 @@ var js_scripts = [
 
 gulp.task('sass', function () {
   return gulp.src('./scss/style.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass({
       mplementation: require('sass'),
       quietDeps: true,
@@ -31,6 +32,7 @@ gulp.task('sass', function () {
     }).on('error', sass.logError))
     .pipe(cleancss())
     .pipe(rename('style.min.css'))
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'));
 });
 
@@ -69,8 +71,10 @@ gulp.task('watch', function () {
 
 gulp.task('js', function () {
   return gulp.src(js_scripts)
+    .pipe(sourcemaps.init())
     .pipe(concat('scripts-all.min.js'))
     .pipe(uglify())
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./js/'));
 });
 
